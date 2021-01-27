@@ -3,15 +3,17 @@ const products = require("./data/products");
 
 const app = express();
 
-// Create a example route, will log "API is running..."
+// Create a default Home route"
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
+// Create the Products route
 app.get("/api/products", (req, res) => {
   res.json(products);
 });
 
+// Individual products route
 app.get("/api/products/:id", (req, res) => {
   const product = products.find((p) => p._id == req.params.id);
   res.json(product);
