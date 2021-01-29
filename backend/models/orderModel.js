@@ -67,6 +67,6 @@ const orderSchema = mongoose.Schema(
 );
 
 // User Model created via Mongoose
-const Order = mongoose.model("User", orderSchema);
+const Order = mongoose.model("Order", orderSchema);
 
 export default Order;
