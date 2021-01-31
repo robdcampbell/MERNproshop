@@ -14,10 +14,11 @@ import Rating from "../components/Rating";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { listProductDetails } from "../actions/productActions";
+import { addToCart } from "../actions/cartActions";
 
 const ProductScreen = ({ history, match }) => {
   // item quantity will be component-level state.
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
 
@@ -27,10 +28,16 @@ const ProductScreen = ({ history, match }) => {
   useEffect(() => {
     dispatch(listProductDetails(match.params.id));
   }, [dispatch, match]);
-
+  //OLD
+  /*
   const addToCartHandler = () => {
     // redirect route
     history.push(`/cart/${match.params.id}?qty=${qty}`);
+  };
+*/
+  const addToCartHandler = () => {
+    dispatch(addToCart(product._id, qty));
+    history.push("/cart");
   };
 
   return (
