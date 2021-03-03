@@ -12,6 +12,8 @@ dotenv.config();
 
 connectDB();
 
+//  SEEDING FILE - use to completely destroy / import new static data
+
 const importData = async () => {
   try {
     // Clear out database before import
