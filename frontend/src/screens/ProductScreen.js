@@ -29,8 +29,9 @@ const ProductScreen = ({ history, match }) => {
   }, [match, dispatch]);
 
   const addtoCartHandler = () => {
-    dispatch(addToCart(product._id, qty));
-    history.push("/cart");
+    //  THE FIX:  dispatch(addToCart(product._id, qty));
+    //history.push("/cart");
+    history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
 
   return (
