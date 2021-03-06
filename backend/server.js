@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("API is running: fixed...");
+  res.send("API is running: MERN Proshop...");
 });
 
 app.use("/api/products", productRoutes);
