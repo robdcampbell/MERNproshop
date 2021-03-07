@@ -1,5 +1,5 @@
 import asyncHandler from "express-async-handler";
-import { PromiseProvider } from "mongoose";
+
 import Order from "../models/orderModel.js";
 
 // @desc Create new order
