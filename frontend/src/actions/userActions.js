@@ -3,6 +3,7 @@ import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
   USER_LOGOUT,
+  USER_REGISTER_REQUEST,
 } from "../constants/userConstants";
 import axios from "axios";
 
@@ -18,11 +19,14 @@ export const login = (email, password) => async (dispatch) => {
         "Content-type": "application/json",
       },
     };
-    const { data } = await axios.post("/api/users/login", {
-      email,
-      password,
-      config,
-    });
+    const { data } = await axios.post(
+      "/api/users/login",
+      {
+        email,
+        password,
+      },
+      config
+    );
     dispatch({
       type: USER_LOGIN_SUCCESS,
       payload: data,
@@ -44,4 +48,43 @@ export const login = (email, password) => async (dispatch) => {
 export const logout = () => (dispatch) => {
   localStorage.removeItem("userInfo");
   dispatch({ type: USER_LOGOUT });
+};
+
+export const register = (name, email, password) => async (dispatch) => {
+  try {
+    dispatch({
+      type: USER_REGISTER_REQUEST,
+    });
+
+    // in the headers, we want to send a content-type of: application-json
+    const config = {
+      headers: {
+        "Content-type": "application/json",
+      },
+    };
+    const { data } = await axios.post(
+      "/api/users",
+      {
+        name,
+        email,
+        password,
+      },
+      config
+    );
+    dispatch({
+      type: USER_LOGIN_SUCCESS,
+      payload: data,
+    });
+
+    // set user to localstorage
+    localStorage.setItem("userInfo", JSON.stringify(data));
+  } catch (error) {
+    dispatch({
+      type: USER_LOGIN_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
 };
