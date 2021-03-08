@@ -5,10 +5,12 @@ import {
   registerUser,
   getUserProfile,
   updateUserProfile,
+  getUsers,
 } from "../controllers/userController.js";
-import { protect } from "../middleware/authMiddleware.js";
+import { protect, admin } from "../middleware/authMiddleware.js";
 
-router.route("/").post(registerUser);
+// .get will fetch all users only "protect" and "admin" middleware is met.
+router.route("/").post(registerUser).get(protect, admin, getUsers);
 router.post("/login", authUser);
 // protect middleware will run every time this "profile" route is called
 router
