@@ -22,9 +22,9 @@ if (process.env.NODE_ENV === "development") {
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("API is running: MERN Proshop...");
-});
+// app.get("/", (req, res) => {
+//   res.send("API is running: MERN Proshop...");
+// });
 
 // Endpoints: Mount imported routes to these paths
 app.use("/api/products", productRoutes);
@@ -39,6 +39,18 @@ app.get("/api/config/paypal", (req, res) =>
 
 const folderDir = path.resolve();
 app.use("/uploads", express.static(path.join(folderDir, "/uploads")));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(folderDir, "/frontend/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(folderDir, "frontend", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running: MERN Proshop...");
+  });
+}
 
 // Middleware
 app.use(notFound);
