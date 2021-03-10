@@ -47,8 +47,9 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(folderDir, "frontend", "build", "index.html"));
   });
 } else {
+  // backend send-test
   app.get("/", (req, res) => {
-    res.send("API is running: MERN Proshop...");
+    res.send("API is running: MERN Proshop - TEST...");
   });
 }
 
