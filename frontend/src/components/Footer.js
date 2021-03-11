@@ -4,11 +4,9 @@ import { Container, Row, Col } from "react-bootstrap";
 const Footer = () => {
   return (
     <footer>
-      <Container>
+      <Container className="footer__container">
         <Row>
-          <Col className="text-center py-3">
-            Copyright &copy; Proshop. rob campbell, 2021.
-          </Col>
+          <Col className="text-center py-3">Copyright &copy; 2021.</Col>
         </Row>
       </Container>
     </footer>
