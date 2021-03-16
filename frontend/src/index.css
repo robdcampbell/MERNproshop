@@ -82,6 +82,7 @@ body {
   font-family: "Helvetica-Neue", Arial, sans-serif;
   font-weight: 400;
   text-transform: none !important;
+  background-color: #f4f4f4;
 }
 
 main {
@@ -120,8 +121,11 @@ Header / Nav
 .nav__brand {
   padding: 0;
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   text-decoration: none;
+  text-transform: lowercase;
+  letter-spacing: -0.1rem;
+  margin-right: 2rem;
   /* color: red; */
 }
 .nav__brand:hover {
@@ -137,6 +141,9 @@ Header / Nav
 .search__btn {
   background-color: var(--clr-grey-7);
 }
+.nav__item {
+  color: #262626 !important;
+}
 
 /*
 =============== 
@@ -146,12 +153,17 @@ Carousel
 
 .carousel {
   border-top: var(--clr-primary-5) solid 30px;
+  border-radius: 0.5rem;
   background-color: var(--clr-grey-9);
   margin-bottom: 2rem;
   background-image: url("images/detroit_BW.png");
   background-size: contain;
   background-size: cover;
   height: 450px;
+}
+
+.carousel__container {
+  padding: 0 3rem;
 }
 
 .carousel__content {
@@ -175,9 +187,9 @@ Carousel
   .carousel__content > h2 {
     margin: 0 auto;
     margin-top: 1rem;
-    padding: 2rem;
-    max-width: 200px;
-    font-size: 1rem;
+    /* padding: 2rem; */
+    max-width: 300px;
+    font-size: 1.5rem;
   }
   .carousel__image {
     padding: 0;
@@ -204,7 +216,7 @@ Carousel
 
 @media screen and (max-width: 500px) {
   .carousel {
-    height: 420px;
+    height: 400px;
   }
 }
 

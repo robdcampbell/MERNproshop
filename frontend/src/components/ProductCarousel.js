@@ -21,12 +21,10 @@ const ProductCarousel = () => {
     <Message variant="danger">{error}</Message>
   ) : (
     <Carousel pause="hover" className="carousel">
-      {products.map((product) => (
-        <Carousel.Item key={product._id}>
+      {/* {products.map((product) => (
+        <Carousel.Item key={product._id} className="carousel__container">
           <Link to={`/product/${product._id}`} className="carousel__content">
-            <div className="">
-              <h2>{product.name}</h2>
-            </div>
+            <h2>{product.name}</h2>
 
             <Image
               src={product.image}
@@ -36,7 +34,7 @@ const ProductCarousel = () => {
             />
           </Link>
         </Carousel.Item>
-      ))}
+      ))} */}
     </Carousel>
   );
 };
