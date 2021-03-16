@@ -78,6 +78,12 @@ Global Styles
 ===============
 */
 
+body {
+  font-family: "Helvetica-Neue", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none !important;
+}
+
 main {
   min-height: 80vh;
 }
@@ -145,6 +151,7 @@ Carousel
   background-image: url("images/detroit_BW.png");
   background-size: contain;
   background-size: cover;
+  height: 450px;
 }
 
 .carousel__content {
@@ -193,6 +200,12 @@ Carousel
 .carousel-caption {
   /* position: absolute;
   top: 0; */
+}
+
+@media screen and (max-width: 500px) {
+  .carousel {
+    height: 420px;
+  }
 }
 
 /*
