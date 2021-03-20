@@ -112,7 +112,6 @@ h3 {
 Header / Nav
 ===============
 */
-
 .nav__container {
   color: var(--clr-black-grey);
   border-bottom: var(--clr-grey-7) solid 1px;
@@ -143,6 +142,21 @@ Header / Nav
 }
 .nav__item {
   color: #262626 !important;
+}
+
+@media screen and (max-width:990px ){
+.nav__wrapper {
+  position: fixed;  
+  width: 100%;
+  background: #f4f4f4;
+  z-index: 100;
+}
+
+/* FOR SCREENS TO CLEAR FIXED NAV */
+.clear__top{
+  margin-top: 120px;
+}
+
 }
 
 /*
@@ -216,8 +230,20 @@ Carousel
 
 @media screen and (max-width: 500px) {
   .carousel {
-    height: 400px;
+    height: 250px;
   }
+}
+
+/*
+=============== 
+HomeScreen
+===============
+*/
+
+.products__heading {
+  text-transform: none;
+  letter-spacing: -0.12rem;
+  font-weight: 900;
 }
 
 /*

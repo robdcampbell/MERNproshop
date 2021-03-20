@@ -60,7 +60,7 @@ const ProfileScreen = ({ history }) => {
   return (
     <Row>
       <Col md={4}>
-        <h2>User Profile</h2>
+        <h2 className="clear__top">User Profile</h2>
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
         {success && <Message variant="success">Profile Updated</Message>}

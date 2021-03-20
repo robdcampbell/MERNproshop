@@ -71,7 +71,7 @@ const ProductScreen = ({ history, match }) => {
       {!product ? (
         ""
       ) : (
-        <div>
+        <div className="clear__top">
           <Link to="/" className="btn btn-light my-3">
             Go Back
           </Link>

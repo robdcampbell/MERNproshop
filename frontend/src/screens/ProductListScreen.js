@@ -71,9 +71,9 @@ const ProductListScreen = ({ history, match }) => {
 
   return (
     <>
-      <Row className="align-items-center">
+      <Row className="align-items-center clear__top" >
         <Col>
-          <h1>Products</h1>
+          <h1>Current Products</h1>
         </Col>
         <Col className="text-right">
           <Button className="my-3" onClick={createProductHandler}>

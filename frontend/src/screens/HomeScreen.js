@@ -29,7 +29,7 @@ const HomeScreen = ({ match }) => {
   }, [dispatch, keyword, pageNumber]);
 
   return (
-    <>
+    <div  className="clear__top">
       <Meta />
       {!keyword ? (
         <ProductCarousel />
@@ -38,7 +38,7 @@ const HomeScreen = ({ match }) => {
           Go Back
         </Link>
       )}
-      <h1>Latest Products</h1>
+      <h1 className="products__heading">Get peddlin'</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -59,7 +59,7 @@ const HomeScreen = ({ match }) => {
           />
         </>
       )}
-    </>
+    </div>
   );
 };
 
